@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Часто задаваемые вопросы — Госучреждение</title>
+  <title>Обследование рабочей силы</title>
   <style>
     :root {
       --primary: #0056b3;
@@ -202,7 +202,7 @@
       color: var(--text-main);
       line-height: 1.5;
       margin-top: 8px;
-      display: none; /* скрыто по умолчанию */
+      display: none;
       padding-left: 4px;
     }
     .faq-bottom-a.visible {
@@ -212,7 +212,7 @@
   </style>
 </head>
 <body>
-  <h1>Часто задаваемые вопросы</h1>
+  <h1>Обследование рабочей силы</h1>
 
   <div class="search-panel">
     <input type="text" id="searchInput" class="search-input" placeholder="Поиск по вопросам и ответам..." />
@@ -225,135 +225,209 @@
     <div class="faq-bottom-title">Часто задаваемые вопросы</div>
     <ul class="faq-bottom-list">
       <li class="faq-bottom-item">
-        <span class="faq-bottom-q" onclick="toggleAnswer(this)">В какие дни и часы можно обратиться лично в учреждение?</span>
+        <span class="faq-bottom-q" onclick="toggleAnswer(this)">Как я узнаю, что меня включили в выборку для обследования рабочей силы?</span>
         <div class="faq-bottom-a">
-          Приём граждан осуществляется по будням с 09:00 до 18:00 (перерыв с 13:00 до 14:00). В пятницу — до 17:00. В выходные и праздничные дни приём не ведётся. Для сокращения времени ожидания рекомендуем записаться на приём через электронный сервис на сайте.
+          О включении в выборку вас уведомят по телефону или письмом (в зависимости от способа связи, указанного в базе). Также в некоторых регионах информация публикуется в личном кабинете на портале ведомства. Если вы не получили уведомление, но знаете, что ваш адрес входит в выборочную сетку, можно уточнить статус по горячей линии территориального органа статистики.
         </div>
       </li>
       <li class="faq-bottom-item">
-        <span class="faq-bottom-q" onclick="toggleAnswer(this)">Как узнать статус своего обращения?</span>
+        <span class="faq-bottom-q" onclick="toggleAnswer(this)">Гарантируется ли конфиденциальность моих данных при обследовании?</span>
         <div class="faq-bottom-a">
-          Статус обращения можно проверить в личном кабинете на сайте учреждения по номеру обращения и коду доступа, который указан в уведомлении о регистрации. Если личного кабинета нет, позвоните по телефону горячей линии: +7 (XXX) XXX‑XX‑XX — оператор сообщит текущий статус.
+          Да, все персональные данные, полученные в ходе обследования рабочей силы, обрабатываются в строгом соответствии с законодательством о персональных данных. Информация используется только в агрегированном виде для формирования официальной статистики. Разглашение индивидуальных сведений недопустимо и влечёт ответственность.
         </div>
       </li>
     </ul>
   </section>
+<script>
+  const faqData = {
+    'Участие в обследовании': [
+      { q: 'Кто может участвовать в обследовании рабочей силы?', a: 'В обследовании участвуют граждане старше 15 лет, проживающие на территории РФ. В выборку попадают домохозяйства, отобранные по специальной методике, обеспечивающей репрезентативность данных по регионам и типам населённых пунктов.' },
+      { q: 'Можно ли отказаться от участия?', a: 'Участие добровольное. Однако отказ может повлиять на полноту и точность статистики по региону. Специалисты рекомендуют участвовать: это помогает государству точнее оценивать ситуацию на рынке труда и принимать меры поддержки.' }
+    ],
+    'Как проходит опрос': [
+      { q: 'В каком формате проводится обследование?', a: 'Опрос проводится интервьюером (лично или по телефону) либо в электронном виде через защищённый личный кабинет. Формат зависит от региона и технической возможности респондента.' },
+      { q: 'Сколько времени занимает заполнение анкеты?', a: 'Среднее время заполнения анкеты — 20–30 минут. Некоторые блоки могут быть пропущены, если они не относятся к вашей ситуации (например, вопросы по занятости для неработающих граждан).' }
+    ],
+    'Результаты и использование данных': [
+      { q: 'Где публикуются результаты обследования?', a: 'Итоговые данные публикуются на официальном сайте Росстата в разделе «Рынок труда, занятость и заработная плата». Там доступны таблицы, краткие пресс‑релизы и методологические пояснения.' },
+      { q: 'Как используют данные обследования?', a: 'Данные применяют для расчёта уровня безработицы, анализа структуры занятости, оценки эффективности мер поддержки и прогнозирования потребности в кадрах. Они служат основой для государственных программ содействия занятости.' }
+    ]
+  };
 
-  <script>
-    const faqData = {
-      'Общие вопросы': [
-        { q: 'Что такое FAQ?', a: 'FAQ (Frequently Asked Questions) — это раздел с часто задаваемыми вопросами и ответами на них.' },
-        { q: 'Как мне связаться с поддержкой?', a: 'Напишите на support@example.com или позвоните по телефону +7 (XXX) XXX-XX-XX.' }
-      ],
-      'Регистрация и вход': [
-        { q: 'Как зарегистрироваться?', a: 'Перейдите на страницу регистрации, заполните форму и подтвердите email.' },
-        { q: 'Я забыл пароль. Что делать?', a: 'На странице входа нажмите «Забыли пароль» и следуйте инструкциям для сброса.' }
-      ],
-      'Оплата и заказы': [
-        { q: 'Какие способы оплаты доступны?', a: 'Принимаем карты Visa/Mastercard, МИР, СБП и оплату по счёту.' },
-        { q: 'Когда заказ считается оплаченным?', a: 'Заказ считается оплаченным после подтверждения банком транзакции.' }
-      ]
-    };
+  const container = document.getElementById('faq-container');
+  const searchInput = document.getElementById('searchInput');
 
-    const container = document.getElementById('faq-container');
-    const searchInput = document.getElementById('searchInput');
+  // Сохраняем начальное состояние, чтобы при пустом поиске вернуть всё как было
+  let initialState = null;
 
-    function escapeRegExp(string) {
-      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
 
-    function highlightText(text, query) {
-      if (!query) return text;
-      const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-      return text.replace(regex, '<span class="highlight">$1</span>');
-    }
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+  }
 
-    function renderFaq(query = '') {
-      container.innerHTML = '';
-      let anyResult = false;
+  function renderFaq(query = '') {
+    container.innerHTML = '';
+    let anyResult = false;
 
-      for (const sectionTitle in faqData) {
-        const sectionBlock = document.createElement('div');
-        sectionBlock.className = 'section-block';
+    for (const sectionTitle in faqData) {
+      const sectionBlock = document.createElement('div');
+      sectionBlock.className = 'section-block';
 
-        const titleDisplay = query ? highlightText(sectionTitle, query) : sectionTitle;
-        const header = document.createElement('div');
-        header.className = 'section-header';
-        header.innerHTML = titleDisplay;
-        header.onclick = () => {
-          const list = header.nextElementSibling;
-          const isOpen = list.classList.contains('open');
-          document.querySelectorAll('.questions-list').forEach(l => l.classList.remove('open'));
-          document.querySelectorAll('.section-header').forEach(h => h.classList.remove('open'));
-          if (!isOpen) {
-            header.classList.add('open');
-            list.classList.add('open');
-          }
-        };
+      const titleDisplay = query ? highlightText(sectionTitle, query) : sectionTitle;
+      const header = document.createElement('div');
+      header.className = 'section-header';
+      header.innerHTML = titleDisplay;
 
-        const list = document.createElement('ul');
-        list.className = 'questions-list';
-
-        faqData[sectionTitle].forEach(item => {
-          const qMatch = item.q.toLowerCase().includes(query.toLowerCase());
-          const aMatch = item.a.toLowerCase().includes(query.toLowerCase());
-          const showItem = !query || qMatch || aMatch;
-
-          if (showItem) {
-            anyResult = true;
-            const li = document.createElement('li');
-            li.className = 'question-item';
-
-            const btn = document.createElement('button');
-            btn.className = 'question-btn';
-            btn.innerHTML = query ? highlightText(item.q, query) : item.q;
-            btn.onclick = (e) => {
-              e.stopPropagation();
-              const answerBlock = li.querySelector('.answer-block');
-              const parentList = li.closest('.questions-list');
-              parentList.querySelectorAll('.answer-block').forEach(b => b.classList.remove('visible'));
-              if (answerBlock) answerBlock.classList.add('visible');
-            };
-
-            const answer = document.createElement('div');
-            answer.className = 'answer-block';
-            answer.innerHTML = query ? highlightText(item.a, query) : item.a;
-
-            li.appendChild(btn);
-            li.appendChild(answer);
-            list.appendChild(li);
-          }
-        });
-
-        sectionBlock.appendChild(header);
-        sectionBlock.appendChild(list);
-        container.appendChild(sectionBlock);
+      // Логика открытия раздела при поиске
+      let shouldOpenSection = false;
+      if (query) {
+        // Совпадение в заголовке раздела
+        if (sectionTitle.toLowerCase().includes(query.toLowerCase())) {
+          shouldOpenSection = true;
+        }
+        // Совпадение в любом вопросе или ответе внутри раздела
+        if (!shouldOpenSection) {
+          shouldOpenSection = faqData[sectionTitle].some(item =>
+            item.q.toLowerCase().includes(query.toLowerCase()) ||
+            item.a.toLowerCase().includes(query.toLowerCase())
+          );
+        }
       }
 
-      if (!anyResult && query) {
-        container.innerHTML = '<div class="no-results">По вашему запросу ничего не найдено. Попробуйте другой вариант.</div>';
+      header.onclick = () => {
+        const list = header.nextElementSibling;
+        const isOpen = list.classList.contains('open');
+        // Закрываем все остальные
+        document.querySelectorAll('.questions-list').forEach(l => l.classList.remove('open'));
+        document.querySelectorAll('.section-header').forEach(h => h.classList.remove('open'));
+        if (!isOpen) {
+          header.classList.add('open');
+          list.classList.add('open');
+        }
+      };
+
+      const list = document.createElement('ul');
+      list.className = 'questions-list';
+      if (shouldOpenSection) {
+        list.classList.add('open');
+        header.classList.add('open');
       }
+
+      faqData[sectionTitle].forEach(item => {
+        const qMatch = item.q.toLowerCase().includes(query.toLowerCase());
+        const aMatch = item.a.toLowerCase().includes(query.toLowerCase());
+        const showItem = !query || qMatch || aMatch;
+
+        if (showItem) {
+          anyResult = true;
+          const li = document.createElement('li');
+          li.className = 'question-item';
+
+          const btn = document.createElement('button');
+          btn.className = 'question-btn';
+          btn.innerHTML = query ? highlightText(item.q, query) : item.q;
+          btn.onclick = (e) => {
+            e.stopPropagation();
+            const parentList = li.closest('.questions-list');
+            parentList.querySelectorAll('.answer-block').forEach(b => b.classList.remove('visible'));
+            const answerBlock = li.querySelector('.answer-block');
+            if (answerBlock) answerBlock.classList.add('visible');
+          };
+
+          const answer = document.createElement('div');
+          answer.className = 'answer-block';
+          answer.innerHTML = query ? highlightText(item.a, query) : item.a;
+
+          // Если есть совпадение в вопросе или ответе — сразу показываем ответ
+          if (query && (qMatch || aMatch)) {
+            answer.classList.add('visible');
+          }
+
+          li.appendChild(btn);
+          li.appendChild(answer);
+          list.appendChild(li);
+        }
+      });
+
+      sectionBlock.appendChild(header);
+      sectionBlock.appendChild(list);
+      container.appendChild(sectionBlock);
     }
 
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.trim();
-      renderFaq(query);
+    if (!anyResult && query) {
+      container.innerHTML = '<div class="no-results">По вашему запросу ничего не найдено. Попробуйте другой вариант.</div>';
+    }
+  }
+
+  // Функция для нижнего блока: показать/скрыть ответ
+  function toggleAnswer(qEl) {
+    const answerEl = qEl.nextElementSibling;
+    if (answerEl.classList.contains('visible')) {
+      answerEl.classList.remove('visible');
+    } else {
+      const allAnswers = qEl.closest('.faq-bottom-list').querySelectorAll('.faq-bottom-a');
+      allAnswers.forEach(a => a.classList.remove('visible'));
+      answerEl.classList.add('visible');
+    }
+  }
+
+  // Поиск по нижнему блоку FAQ + принудительное открытие найденных ответов
+  function searchBottomFaq(query) {
+    const items = document.querySelectorAll('.faq-bottom-item');
+    let anyResult = false;
+
+    items.forEach(item => {
+      const qEl = item.querySelector('.faq-bottom-q');
+      const aEl = item.querySelector('.faq-bottom-a');
+      const qText = qEl ? qEl.textContent.toLowerCase() : '';
+      const aText = aEl ? aEl.textContent.toLowerCase() : '';
+
+      const qMatch = qText.includes(query.toLowerCase());
+      const aMatch = aText.includes(query.toLowerCase());
+
+      if (!query) {
+        item.style.display = ''; // сброс видимости
+        aEl.classList.remove('visible');
+        return;
+      }
+
+      if (qMatch || aMatch) {
+        anyResult = true;
+        item.style.display = 'block';
+        // Сразу открываем ответ при совпадении
+        aEl.classList.add('visible');
+      } else {
+        item.style.display = 'none';
+        aEl.classList.remove('visible');
+      }
     });
 
-    renderFaq();
+    const noResults = document.querySelector('.bottom-no-results');
+    if (noResults) noResults.remove();
 
-    // Функция для нижнего блока: показать/скрыть ответ
-    function toggleAnswer(qEl) {
-      const answerEl = qEl.nextElementSibling;
-      if (answerEl.classList.contains('visible')) {
-        answerEl.classList.remove('visible');
-      } else {
-        // Опционально: закрыть остальные ответы в этом блоке
-        const allAnswers = qEl.closest('.faq-bottom-list').querySelectorAll('.faq-bottom-a');
-        allAnswers.forEach(a => a.classList.remove('visible'));
-        answerEl.classList.add('visible');
-      }
+    if (!anyResult && query) {
+      const noRes = document.createElement('div');
+      noRes.className = 'no-results bottom-no-results';
+      noRes.textContent = 'По вашему запросу в этом блоке ничего не найдено.';
+      document.querySelector('.faq-bottom-section').appendChild(noRes);
     }
-  </script>
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim();
+    renderFaq(query);
+    searchBottomFaq(query);
+  });
+
+  // Первоначальная отрисовка
+  renderFaq();
+  // Нижний блок изначально не фильтруем, но можно оставить как есть
+</script>
+
 </body>
 </html>
